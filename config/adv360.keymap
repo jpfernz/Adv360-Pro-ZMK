@@ -6,6 +6,10 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/pointing.h>
 
+// Home row mods macro
+#define HRML(k1,k2,k3,k4) &ht LALT k1  &ht LCTRL k2  &ht LGUI k3  &ht LSHFT k4
+#define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RGUI k2  &ht LCTRL k3  &ht RALT k4
+
 / {
     behaviors {
       #include "macros.dtsi"
@@ -20,6 +24,51 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+      ht: hold_tap {
+        label = "hold_tap";
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
+        quick-tap-ms = <150>;
+        global-quick-tap;
+        bindings = <&kp>, <&kp>;
+      };
+      tdmu: tap_dance_mu {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MU";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp MINUS>, <&kp UNDER>;
+      };
+      tdeqp: tap_dance_eqp {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_EQP";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp EQUAL>, <&kp PLUS>;
+      };
+      tdlbr: tap_dance_lbr {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_LBR";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LBKT>, <&kp LBRC>;
+      };
+      tdrbr: tap_dance_rbr {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_RBR";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp RBKT>, <&kp RBRC>;
+      };
+      tdcol: tap_dance_col {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_COL";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp SEMI>, <&kp COLON>;
+      };
     };
 
   keymap {
@@ -30,9 +79,9 @@
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &kp ESC   HRML(A,       S,       D,       F)     &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  HRMR(J,    K,        L,      SEMI) &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT              &lt 4 BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
     };
     keypad {
@@ -65,21 +114,38 @@
         &none &none        &none        &none        &none                                       &none &none &none &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none &none &none
       >;
     };
+
+    // LAYER 4
     extra1 { 
       display-name = "Red";    
-      status = "reserved";
+      bindings = <
+        &trans &trans    &trans   &trans    &trans   &trans    &tog 1                                     &mo 3 &trans &trans   &trans   &trans &trans  &trans
+        &trans &kp EXCL  &kp AT   &kp HASH  &kp DLLR &kp PRCNT &none                                      &none &trans &kp LPAR &kp RPAR &tdlbr &tdlbr  &trans
+        &trans &kp CARET &kp AMPS &kp ASTRK &tdeqp   &tdmu              &trans &trans &trans &trans             &trans &trans   &trans   &trans &trans  &trans
+        &trans &trans &trans &trans &trans &trans                              &trans &trans                    &trans &trans   &trans   &trans  &trans  &trans
+        &trans &trans &trans &trans &trans                       &trans &trans &trans &trans &trans &trans             &trans   &trans   &trans  &trans  &trans
+      >;
     };
 
+    // LAYER 5
     extra2 { 
       display-name = "Purple";    
-      status = "reserved";
+      bindings = <
+        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
+      >;
     };
 
+    // LAYER 6
     extra3 { 
       display-name = "Cyan";    
       status = "reserved";
     };
 
+    // LAYER 7
     extra4 { 
       display-name = "Yellow";    
       status = "reserved";
