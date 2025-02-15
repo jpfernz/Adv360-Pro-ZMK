@@ -69,6 +69,48 @@
         tapping-term-ms = <200>;
         bindings = <&kp SEMI>, <&kp COLON>;
       };
+      tdqt: tap_dance_qt {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_QT";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp SQT>, <&kp DQT>;
+      };
+      td_copy: tap_dance_copy {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_COPY";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LC(C)>, <&kp LG(C)>;
+      };
+      td_paste: tap_dance_paste {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_PASTE";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LC(V)>, <&kp LG(V)>;
+      };
+      td_undo: tap_dance_undo {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_UNDO";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LC(Z)>, <&kp LG(Z)>;
+      };
+      td_cut: tap_dance_cut {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_CUT";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LC(X)>, <&kp LG(Z)>;
+      };
+      td_save: tap_dance_save{
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_DANCE_SAVE";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&kp LC(S)>, <&kp LG(S)>;
+      };
     };
 
   keymap {
@@ -77,11 +119,11 @@
     default_layer {
       display-name = "Base";
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   HRML(A,       S,       D,       F)     &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  HRMR(J,    K,        L,      SEMI) &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT              &lt 4 TAB &kp ENTER   &kp END  &kp PG_DN &kp BSPC &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                   &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                    &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
+        &kp ESC   HRML(A,       S,       D,       F)     &kp G  &none             &kp LCTRL   &kp LALT &kp LGUI  &kp RCTRL               &none &kp H  HRMR(J,    K,        L,      SEMI) &kp SQT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                                &kp HOME &kp PG_UP                               &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                 &lt 4 TAB &lt 6 ENTER &kp END  &kp PG_DN &lt 7 BSPC &lt 5 SPACE               &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
     };
     keypad {
@@ -119,11 +161,11 @@
     extra1 { 
       display-name = "Red";    
       bindings = <
-        &trans &trans    &trans   &trans    &trans   &trans    &tog 1                                     &mo 3 &trans &trans   &trans   &trans &trans  &trans
-        &trans &kp EXCL  &kp AT   &kp HASH  &kp DLLR &kp PRCNT &none                                      &none &trans &kp LPAR &kp RPAR &tdlbr &tdlbr  &trans
-        &trans &kp CARET &kp AMPS &kp ASTRK &tdeqp   &tdmu              &trans &trans &trans &trans             &trans &trans   &trans   &trans &trans  &trans
-        &trans &trans    &kp DEL &trans &trans &trans                          &trans &trans                    &trans &trans   &trans   &trans  &trans  &trans
-        &trans &trans    &trans &trans &trans                    &trans &trans &trans &trans &trans &trans             &trans   &trans   &trans  &trans  &trans
+        &trans &trans        &trans   &trans    &trans   &trans    &tog 1                                     &mo 3 &trans &trans   &trans   &trans &trans  &trans
+        &trans &kp EXCL      &kp AT   &kp HASH  &kp DLLR &kp PRCNT &none                                      &none &trans &kp LPAR &kp RPAR &tdlbr &tdlbr  &trans
+        &trans &kp CARET     &kp AMPS &kp ASTRK &tdeqp   &tdmu              &trans &trans &trans &trans             &trans &trans   &trans   &trans &trans  &trans
+        &trans &kp LA(SPACE) &kp DEL  &trans    &trans   &kp LC(B)                 &trans &trans                    &trans &trans   &trans   &trans &trans  &trans
+        &trans &trans        &trans   &trans    &trans               &trans &trans &trans &trans &trans &trans             &trans   &trans   &trans &trans  &trans
       >;
     };
 
@@ -131,24 +173,36 @@
     extra2 { 
       display-name = "Purple";    
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &tog 1                                          &mo 3  &trans &trans    &trans   &trans    &trans   &trans
+        &trans &trans &trans &trans &trans &trans  &none                                           &none  &trans &kp HOME  &kp UARW &kp END   &td_save &trans
+        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none  &trans &kp LARW  &kp DARW &kp RARW  &tdcol   &tdqt
+        &trans &trans &trans &trans &trans &trans                      &trans &trans                      &trans &kp PG_UP &kp INS  &kp PG_DN &trans   &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans               &trans    &trans   &trans    &trans   &trans
       >;
     };
 
     // LAYER 6
     extra3 { 
       display-name = "Cyan";    
-      status = "reserved";
+      bindings = <
+        &trans &trans       &trans       &trans       &trans       &trans  &tog 1                                            &mo 3 &trans &trans &trans &trans  &trans  &trans
+        &trans &kp C_PP     &kp MUTE     &kp C_VOL_DN &kp C_VOL_UP &trans  &none                                             &none &trans &trans &trans &trans  &trans  &trans
+        &trans &kp LC(LARW) &kp LC(UARW) &kp LC(DARW) &kp LC(RARW) &trans  &none          &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
+        &trans &td_undo     &td_cut      &td_copy     &td_paste    &trans                        &trans &trans                     &trans &trans &trans &trans  &trans  &trans
+        &trans &trans       &trans       &trans       &trans                       &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
+      >;
     };
 
     // LAYER 7
     extra4 { 
       display-name = "Yellow";    
-      status = "reserved";
+      bindings = <
+        &trans &trans &trans &trans &trans &trans  &tog 1                                          &mo 3 &trans  &trans  &trans    &trans           &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &none                                           &none &kp F1  &kp F2  &kp F3    &kp F4           &kp F5  &trans
+        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &kp F6  &kp F7  &kp F8    &kp F9           &kp F10 &trans
+        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &kp F11 &kp F12 &kp RSHFT &kp RG(RSHFT(D)) &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans               &trans  &trans    &trans           &trans  &trans
+      >;
     };
   };
 };
