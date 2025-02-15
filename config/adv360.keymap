@@ -173,11 +173,11 @@
     extra2 { 
       display-name = "Purple";    
       bindings = <
-        &trans &trans &trans &trans &trans &trans  &tog 1                                          &mo 3 &trans &trans   &trans &trans  &trans   &trans
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &kp HOME &kp UP &kp END &td_copy &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &tog 1                                          &mo 3 &trans &trans   &trans   &trans     &trans   &trans
+        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &kp HOME &kp UP   &kp END    &td_copy &trans
+        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &kp LEFT &kp DOWN &kp RIGHT  &trans   &trans
+        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans   &trans   &trans     &trans   &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans   &trans   &trans     &trans   &trans
       >;
     };
 
