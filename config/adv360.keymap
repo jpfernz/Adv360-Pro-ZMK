@@ -172,7 +172,13 @@
     // LAYER 5
     extra2 { 
       display-name = "Purple";    
-      status = "reserved";
+      bindings = <
+        &trans &trans &trans &trans &trans &trans  &tog 1                                          &mo 3 &trans &trans   &trans &trans  &trans   &trans
+        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &kp HOME &kp UP &kp END &td_copy &trans
+        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
+      >;
     };
 
     // LAYER 6
