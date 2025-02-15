@@ -185,8 +185,8 @@
     extra3 { 
       display-name = "Cyan";    
       bindings = <
-        &trans &trans &trans &trans &trans &trans  &tog 1                                          &mo 3 &trans &trans  &trans   &trans     &trans   &trans
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans  &trans   &trans     &trans   &trans
+        &trans &trans   &trans   &trans       &trans       &trans  &tog 1                                          &mo 3 &trans &trans  &trans   &trans     &trans   &trans
+        &trans &kp C_PP &kp MUTE &kp C_VOL_DN &kp C_VOL_UP &trans  &none                                           &none &trans &trans  &trans   &trans     &trans   &trans
         &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans  &trans   &trans     &trans   &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans  &trans   &trans     &trans   &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans  &trans   &trans     &trans   &trans
