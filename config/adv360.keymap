@@ -172,37 +172,19 @@
     // LAYER 5
     extra2 { 
       display-name = "Purple";    
-      bindings = <
-        &trans &trans &trans &trans &trans &trans  &tog 1                                          &mo 3  &trans &trans    &trans   &trans    &trans   &trans
-        &trans &trans &trans &trans &trans &trans  &none                                           &none  &trans &kp HOME  &kp UARW &kp END   &td_save &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none  &trans &kp LARW  &kp DARW &kp RARW  &tdcol   &tdqt
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                      &trans &kp PG_UP &kp INS  &kp PG_DN &trans   &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans               &trans    &trans   &trans    &trans   &trans
-      >;
+      status = "reserved";
     };
 
     // LAYER 6
     extra3 { 
       display-name = "Cyan";    
-      bindings = <
-        &trans &trans       &trans       &trans       &trans        &trans  &tog 1                                            &mo 3 &trans &trans &trans &trans  &trans  &trans
-        &trans &trans       &trans       &trans       &trans        &trans  &none                                           &none  &trans &kp HOME  &kp UARW &kp END   &td_save &trans
-        &trans &kp LC(LEFT) &kp LC(UP)   &kp LC(DOWN) &kp LC(RIGHT) &trans  &none          &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
-        &trans &td_undo     &td_cut      &td_copy     &td_paste     &trans                        &trans &trans                     &trans &trans &trans &trans  &trans  &trans
-        &trans &trans       &trans       &trans       &trans                        &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
-      >;
+      status = "reserved";
     };
 
     // LAYER 7
     extra4 { 
       display-name = "Yellow";    
-      bindings = <
-        &trans &trans &trans &trans &trans &trans  &tog 1                                          &mo 3 &trans  &trans  &trans    &trans           &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &none                                           &none &kp F1  &kp F2  &kp F3    &kp F4           &kp F5  &trans
-        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &kp F6  &kp F7  &kp F8    &kp F9           &kp F10 &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &kp F11 &kp F12 &kp RSHFT &kp RSHFT(D) &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans               &trans  &trans    &trans           &trans  &trans
-      >;
+      status = "reserved";
     };
   };
 };
