@@ -184,13 +184,25 @@
     // LAYER 6
     extra3 { 
       display-name = "Cyan";    
-      status = "reserved";
+      bindings = <
+        &trans &trans &trans &trans &trans &trans  &tog 1                                          &mo 3 &trans &trans  &trans   &trans     &trans   &trans
+        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans  &trans   &trans     &trans   &trans
+        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans  &trans   &trans     &trans   &trans
+        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans  &trans   &trans     &trans   &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans  &trans   &trans     &trans   &trans
+      >;
     };
 
     // LAYER 7
     extra4 { 
       display-name = "Yellow";    
-      status = "reserved";
+      bindings = <
+        &trans &trans &trans &trans &trans &trans  &tog 1                                          &mo 3 &trans &trans  &trans   &trans     &trans   &trans
+        &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans  &trans   &trans     &trans   &trans
+        &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans  &trans   &trans     &trans   &trans
+        &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans  &trans   &trans     &trans   &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans  &trans   &trans     &trans   &trans
+      >;
     };
   };
 };
