@@ -161,11 +161,11 @@
     extra1 { 
       display-name = "Red";    
       bindings = <
-        &trans &trans        &trans   &trans    &trans   &trans    &tog 1                                     &mo 3 &trans &trans   &trans   &trans &trans  &trans
-        &trans &kp EXCL      &kp AT   &kp HASH  &kp DLLR &kp PRCNT &none                                      &none &trans &kp LPAR &kp RPAR &tdlbr &tdlbr  &trans
-        &trans &kp CARET     &kp AMPS &kp ASTRK &tdeqp   &tdmu     &none    &trans &trans &trans &trans             &trans &trans   &trans   &trans &trans  &trans
-        &trans &kp LA(SPACE) &kp DEL  &trans    &trans   &kp LC(B)                 &trans &trans                    &trans &trans   &trans   &trans &trans  &trans
-        &trans &trans        &trans   &trans    &trans               &trans &trans &trans &trans &trans &trans             &trans   &trans   &trans &trans  &trans
+        &trans &trans        &trans   &trans    &trans   &trans    &tog 1                                           &mo 3 &trans &trans   &trans   &trans &trans  &trans
+        &trans &kp EXCL      &kp AT   &kp HASH  &kp DLLR &kp PRCNT &none                                            &none &trans &kp LPAR &kp RPAR &tdlbr &tdrbr  &trans
+        &trans &kp CARET     &kp AMPS &kp ASTRK &tdeqp   &tdmu     &none          &trans &trans &trans &trans             &trans &trans   &trans   &trans &trans  &trans
+        &trans &kp LA(SPACE) &kp DEL  &trans    &trans   &kp LC(B)                       &trans &trans                    &trans &trans   &trans   &trans &trans  &trans
+        &trans &trans        &trans   &trans    &trans                     &trans &trans &trans &trans &trans &trans             &trans   &trans   &trans &trans  &trans
       >;
     };
 
