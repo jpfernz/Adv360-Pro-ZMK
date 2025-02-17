@@ -102,7 +102,7 @@
         label = "TAP_DANCE_CUT";
         #binding-cells = <0>;
         tapping-term-ms = <200>;
-        bindings = <&kp LC(X)>, <&kp LG(Z)>;
+        bindings = <&kp LC(X)>, <&kp LG(X)>;
       };
       td_save: tap_dance_save{
         compatible = "zmk,behavior-tap-dance";
