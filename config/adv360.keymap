@@ -214,7 +214,7 @@
       display-name = "Cyan";    
       bindings = <
         &trans &trans       &trans       &trans        &trans        &trans        &tog 1                                             &mo 3 &trans &trans  &trans   &trans     &trans   &trans
-        &trans &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &kp LG(LS(S)) &kp C_PP      &none                                              &none &trans &trans  &trans   &trans     &trans   &trans
+        &trans &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &kp C_PP      &kp LG(LS(S)) &none                                              &none &trans &trans  &trans   &trans     &trans   &trans
         &trans &kp LC(LEFT) &kp LC(UP)   &kp LC(DOWN)  &kp LC(RIGHT) &kp LG(LS(4)) &none           &trans &trans &trans &trans        &none &trans &trans  &trans   &trans     &trans   &trans
         &trans &td_undo     &td_cut      &td_copy      &td_paste     &trans                               &trans &trans                     &trans &trans  &trans   &trans     &trans   &trans
         &trans &trans       &trans       &kp C_BRI_DN  &kp C_BRI_UP                         &trans &trans &trans &trans &trans &trans              &trans  &trans   &trans     &trans   &trans
